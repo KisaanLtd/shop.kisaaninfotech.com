@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2e7d32;
-            --primary-dark: #1b5e20;
-            --primary-light: #4caf50;
-            --accent-color: #ff9800;
+            --primary-color: #2d5016;
+            --primary-dark: #1a2f0f;
+            --primary-light: #4a7c2b;
+            --accent-color: #ff6b35;
             --text-dark: #333;
             --text-light: #666;
-            --bg-light: #f9f9f9;
+            --bg-light: #f8f9fa;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
@@ -41,7 +41,8 @@
         
         /* Header Styles */
         header {
-            background-color: var(--white);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            color: white;
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
@@ -67,11 +68,13 @@
         
         .logo h1 {
             font-size: 1.8rem;
-            color: var(--primary-dark);
+            color: var(--white);
         }
         
-        .logo span {
-            color: var(--accent-color);
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: var(--white);
         }
         
         nav ul {
@@ -82,19 +85,19 @@
         
         nav a {
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
+            color: var(--white);
+            font-weight: 500;
             transition: var(--transition);
             padding: 5px 0;
             position: relative;
         }
         
         nav a:hover {
-            color: var(--primary-color);
+            opacity: 0.8;
         }
         
         nav a.active {
-            color: var(--primary-color);
+            opacity: 1;
         }
         
         nav a.active:after {
@@ -102,7 +105,7 @@
             position: absolute;
             width: 100%;
             height: 3px;
-            background-color: var(--primary-color);
+            background-color: var(--accent-color);
             bottom: -5px;
             left: 0;
         }
@@ -139,60 +142,81 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--primary-dark);
+            color: var(--white);
             cursor: pointer;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(45, 80, 22, 0.8), rgba(74, 124, 43, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234a7c2b" width="1200" height="600"/><path fill="%232d5016" opacity="0.3" d="M0 300L50 275L100 325L150 300L200 350L250 325L300 375L350 325L400 350L450 300L500 325L550 275L600 300L650 325L700 275L750 300L800 350L850 325L900 350L950 300L1000 325L1050 275L1100 300L1150 325L1200 300V600H0Z"/></svg>');
             background-size: cover;
             background-position: center;
-            color: var(--white);
-            padding: 80px 0;
+            color: white;
+            padding: 5rem 20px;
             text-align: center;
         }
         
         .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
             opacity: 0.9;
         }
         
-        .btn {
+        .cta-button {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
+            background: var(--accent-color);
             color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
+            padding: 1rem 2.5rem;
             text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
         }
         
-        .btn:hover {
-            background-color: var(--primary-dark);
+        .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
         }
         
-        .btn-accent {
-            background-color: var(--accent-color);
+        /* Stats Section */
+        .stats {
+            background: var(--bg-light);
+            padding: 3rem 20px;
+            text-align: center;
         }
         
-        .btn-accent:hover {
-            background-color: #e68900;
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
         
-        /* Categories Section */
+        .stat-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Main Sections */
         .section-title {
             text-align: center;
             margin: 60px 0 40px;
@@ -200,7 +224,7 @@
         }
         
         .section-title h2 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--primary-dark);
             display: inline-block;
             padding-bottom: 10px;
@@ -217,6 +241,14 @@
             transform: translateX(-50%);
         }
         
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* Categories Section */
         .categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -226,7 +258,7 @@
         
         .category-card {
             background-color: var(--white);
-            border-radius: 8px;
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -251,91 +283,103 @@
             color: var(--primary-dark);
         }
         
-        /* Products Section */
-        .products-section {
-            margin-bottom: 80px;
-        }
-        
-        .products-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 40px;
-        }
-        
-        .filter-btn {
-            padding: 8px 20px;
-            background-color: var(--white);
-            border: 2px solid #ddd;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .filter-btn.active, .filter-btn:hover {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-        
-        .products-grid {
+        /* Products/Services Grid */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
+            margin-bottom: 60px;
         }
         
-        .product-card {
-            background-color: var(--white);
-            border-radius: 8px;
+        .card {
+            background: var(--white);
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
         }
         
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
-        .product-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 3rem;
+        .card-icon {
+            background: linear-gradient(135deg, var(--primary-light), #5a9c3b);
+            color: white;
+            padding: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
         }
         
-        .product-content {
-            padding: 20px;
+        .card-content {
+            padding: 2rem;
         }
         
-        .product-category {
+        .badge {
             display: inline-block;
-            background-color: rgba(46, 125, 50, 0.1);
-            color: var(--primary-color);
-            padding: 4px 12px;
-            border-radius: 30px;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
         
-        .product-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--text-dark);
+        .card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
         }
         
-        .product-description {
+        .card p {
             color: var(--text-light);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .card-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .card-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+        
+        .card-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .card-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+        
+        .card-button:hover {
+            background: var(--primary-dark);
         }
         
         .product-footer {
@@ -366,107 +410,87 @@
             background-color: var(--primary-color);
         }
         
-        /* Services Section */
-        .services-section {
-            margin-bottom: 80px;
+        /* Category Sections */
+        .category-section {
+            background: var(--bg-light);
+            padding: 4rem 20px;
         }
         
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 4rem 20px;
+            text-align: center;
         }
         
-        .service-card {
-            background-color: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+        .contact h2 {
+            color: white;
         }
         
-        .service-card:hover {
-            transform: translateY(-5px);
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1.1rem;
         }
         
-        .service-content {
-            padding: 25px;
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
+        .contact-info p {
+            margin: 0.5rem 0;
         }
         
         /* Footer */
         footer {
-            background-color: var(--primary-dark);
+            background: var(--primary-dark);
             color: white;
-            padding: 60px 0 30px;
+            padding: 2rem 20px;
+            text-align: center;
         }
         
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Products Filter */
+        .products-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 40px;
         }
         
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3:after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 3px;
-            background-color: var(--accent-color);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column a {
-            color: #ddd;
-            text-decoration: none;
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: var(--white);
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
             transition: var(--transition);
         }
         
-        .footer-column a:hover {
-            color: var(--accent-color);
-            padding-left: 5px;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.9rem;
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
         }
         
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .products-grid, .services-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
         
@@ -493,7 +517,7 @@
             
             nav li {
                 padding: 10px 0;
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
             
             .mobile-menu-btn {
@@ -505,17 +529,30 @@
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
         
         @media (max-width: 576px) {
-            .products-grid, .services-grid, .categories {
+            .categories {
                 grid-template-columns: 1fr;
             }
             
             .hero {
-                padding: 60px 0;
+                padding: 3rem 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -526,9 +563,12 @@
         <div class="container header-container">
             <div class="logo">
                 <div class="logo-img">
-                    <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                    <i class="fas fa-leaf" style="font-size: 2.5rem; color: white;"></i>
                 </div>
-                <h1>Kisaan<span>Infotech</span></h1>
+                <div>
+                    <h1>Kisaan Infotech</h1>
+                    <p>Transforming Indian Agriculture with Intelligence</p>
+                </div>
             </div>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -537,10 +577,10 @@
             
             <nav id="mainNav">
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#products">Products</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#business">Business</a></li>
+                    <li><a href="#products">Products</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -548,19 +588,39 @@
             <div class="header-actions">
                 <div class="cart-icon">
                     <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
-                    <span class="cart-count">3</span>
+                    <span class="cart-count">0</span>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Agri-Tech Solutions for Modern Farming</h2>
-            <p>Discover innovative agricultural products and services to enhance productivity, optimize resources, and maximize your farm's potential with Kisaan Infotech.</p>
-            <a href="#products" class="btn">Explore Products</a>
-            <a href="#services" class="btn btn-accent">Our Services</a>
+    <section class="hero" id="home">
+        <h2>Smart Agriculture Solutions & Premium Products</h2>
+        <p>Your complete marketplace for precision farming technology, agricultural services, and traceable organic products</p>
+        <a href="#products" class="cta-button">Shop Products</a>
+        <a href="#services" class="cta-button" style="background: white; color: var(--primary-color); margin-left: 15px;">Explore Services</a>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>20-40%</h3>
+                <p>Cost Reduction</p>
+            </div>
+            <div class="stat-item">
+                <h3>30%+</h3>
+                <p>Yield Increase</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>AI Advisory Support</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Supply Chain Visibility</p>
+            </div>
         </div>
     </section>
 
@@ -573,232 +633,421 @@
         <div class="categories">
             <div class="category-card">
                 <div class="category-icon">
-                    <i class="fas fa-tractor"></i>
-                </div>
-                <h3>Farm Equipment</h3>
-                <p>Modern machinery and tools for efficient farming operations</p>
-            </div>
-            
-            <div class="category-card">
-                <div class="category-icon">
                     <i class="fas fa-seedling"></i>
                 </div>
-                <h3>Seeds & Inputs</h3>
-                <p>High-quality seeds, fertilizers, and crop protection products</p>
+                <h3>Organic Produce</h3>
+                <p>Certified organic grains, pulses and fresh produce with complete traceability</p>
             </div>
             
             <div class="category-card">
                 <div class="category-icon">
-                    <i class="fas fa-tablet-alt"></i>
+                    <i class="fas fa-tractor"></i>
                 </div>
-                <h3>Digital Solutions</h3>
-                <p>Software and IoT devices for smart farm management</p>
+                <h3>Precision Farming</h3>
+                <p>Drone services, IoT monitoring and smart farming equipment</p>
             </div>
             
             <div class="category-card">
                 <div class="category-icon">
-                    <i class="fas fa-water"></i>
+                    <i class="fas fa-chart-line"></i>
                 </div>
-                <h3>Irrigation Systems</h3>
-                <p>Advanced irrigation solutions for optimal water usage</p>
+                <h3>Business Solutions</h3>
+                <p>Export services, lending, insurance and FPO support</p>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3>Retail Products</h3>
+                <p>Fresh farm produce, bakery items and value-added products</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container">
+        <div class="section-title">
+            <h2>🚀 Precision Farming Services</h2>
+        </div>
+        <p class="section-subtitle">Advanced technology solutions for modern agriculture</p>
+        
+        <div class="grid">
+            <!-- Service 1 -->
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <div class="card-content">
+                    <span class="badge">SERVICE 01</span>
+                    <h3>Precision Farming Readiness Audit</h3>
+                    <p>Comprehensive farm assessment with GPS mapping, soil analysis, and customized digital agriculture roadmap.</p>
+                    <ul class="card-features">
+                        <li>Field Mapping & Analysis</li>
+                        <li>Technology Recommendations</li>
+                        <li>ROI Analysis & Financial Projections</li>
+                        <li>Phased Implementation Plan</li>
+                    </ul>
+                    <div class="price">Contact for Quote</div>
+                    <a href="#contact" class="card-button">Request Consultation</a>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="card">
+                <div class="card-icon">🚁</div>
+                <div class="card-content">
+                    <span class="badge">SERVICE 02</span>
+                    <h3>Drone Monitoring & Precision Spraying</h3>
+                    <p>DGCA-certified drone services with multispectral imaging and AI-powered analytics for crop health monitoring.</p>
+                    <ul class="card-features">
+                        <li>NDVI & Thermal Imaging</li>
+                        <li>Precision Aerial Spraying</li>
+                        <li>Early Pest Detection (5-7 days advance)</li>
+                        <li>30% Chemical Savings</li>
+                    </ul>
+                    <div class="price">Starting at ₹5,000/acre</div>
+                    <a href="#contact" class="card-button">Book Service</a>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="card">
+                <div class="card-icon">🔬</div>
+                <div class="card-content">
+                    <span class="badge">SERVICE 03</span>
+                    <h3>Smart Soil Analysis & IoT Monitoring</h3>
+                    <p>GPS-guided soil sampling with wireless IoT sensors for real-time field intelligence and precision recommendations.</p>
+                    <ul class="card-features">
+                        <li>High-Resolution Soil Mapping</li>
+                        <li>Real-time IoT Sensor Network</li>
+                        <li>Mobile App Integration</li>
+                        <li>25-35% Water Savings</li>
+                    </ul>
+                    <div class="price">₹15,000 - ₹50,000</div>
+                    <a href="#contact" class="card-button">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <div class="card-content">
+                    <span class="badge">SERVICE 04</span>
+                    <h3>AI-Powered Farm Advisory System</h3>
+                    <p>24/7 AI-driven platform integrating satellite data, weather, and sensors for smart farming decisions.</p>
+                    <ul class="card-features">
+                        <li>Variable Rate Technology Maps</li>
+                        <li>Smart Irrigation Scheduling</li>
+                        <li>AI Pest & Disease Alerts</li>
+                        <li>Multilingual Chatbot Support</li>
+                    </ul>
+                    <div class="price">₹3,000/month</div>
+                    <a href="#contact" class="card-button">Subscribe Now</a>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="card">
+                <div class="card-icon">🚜</div>
+                <div class="card-content">
+                    <span class="badge">SERVICE 05</span>
+                    <h3>Equipment Rental & Marketplace</h3>
+                    <p>Access precision farming equipment without capital investment through our GPS-tracked rental platform.</p>
+                    <ul class="card-features">
+                        <li>GPS-Guided Tractors & Equipment</li>
+                        <li>Smart Irrigation Systems</li>
+                        <li>Predictive Maintenance</li>
+                        <li>Pay-per-Use Model</li>
+                    </ul>
+                    <div class="price">From ₹500/day</div>
+                    <a href="#contact" class="card-button">Browse Equipment</a>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="card">
+                <div class="card-icon">🔗</div>
+                <div class="card-content">
+                    <span class="badge">SERVICE 06</span>
+                    <h3>Blockchain Traceability & ESG Certification</h3>
+                    <p>Immutable farm-to-fork traceability with ESG certifications for premium market access.</p>
+                    <ul class="card-features">
+                        <li>Blockchain Record Keeping</li>
+                        <li>ESG & Sustainability Scoring</li>
+                        <li>QR Code Integration</li>
+                        <li>15-30% Price Premium</li>
+                    </ul>
+                    <div class="price">₹10,000 setup + ₹2,000/month</div>
+                    <a href="#contact" class="card-button">Get Certified</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Solutions Section -->
+    <section id="business" class="category-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>💼 Business Solutions</h2>
+            </div>
+            <p class="section-subtitle">Expand market access and grow your agricultural business</p>
+            
+            <div class="grid">
+                <!-- Business Solution 1 -->
+                <div class="card">
+                    <div class="card-icon">📦</div>
+                    <div class="card-content">
+                        <h3>Kisaan Logistics™</h3>
+                        <p>End-to-end cold chain logistics with GPS tracking, reducing post-harvest losses by 20-30%.</p>
+                        <ul class="card-features">
+                            <li>GPS-Tracked Transport</li>
+                            <li>Cold Storage Solutions</li>
+                            <li>Real-time Monitoring</li>
+                            <li>Last-Mile Delivery</li>
+                        </ul>
+                        <a href="#contact" class="card-button">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Business Solution 2 -->
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <div class="card-content">
+                        <h3>Export Facilitation Services</h3>
+                        <p>Complete export support including documentation, buyer matching, and compliance for global markets.</p>
+                        <ul class="card-features">
+                            <li>Buyer Matching</li>
+                            <li>APEDA Registration</li>
+                            <li>Phytosanitary Certificates</li>
+                            <li>International Payment Processing</li>
+                        </ul>
+                        <a href="#contact" class="card-button">Explore Exports</a>
+                    </div>
+                </div>
+
+                <!-- Business Solution 3 -->
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <div class="card-content">
+                        <h3>Digital Marketing & Brand Building</h3>
+                        <p>Professional digital marketing services to build your farm brand and reach customers directly.</p>
+                        <ul class="card-features">
+                            <li>Product Photography</li>
+                            <li>Website Development</li>
+                            <li>Social Media Management</li>
+                            <li>E-commerce Enablement</li>
+                        </ul>
+                        <a href="#contact" class="card-button">Build Your Brand</a>
+                    </div>
+                </div>
+
+                <!-- Business Solution 4 -->
+                <div class="card">
+                    <div class="card-icon">💳</div>
+                    <div class="card-content">
+                        <h3>Agricultural Lending</h3>
+                        <p>Data-driven loans with flexible repayment aligned to crop cycles and competitive interest rates.</p>
+                        <ul class="card-features">
+                            <li>Farm Data-Based Credit</li>
+                            <li>Flexible Repayment</li>
+                            <li>Pre-approved Limits</li>
+                            <li>Competitive Rates</li>
+                        </ul>
+                        <a href="#contact" class="card-button">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Business Solution 5 -->
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <div class="card-content">
+                        <h3>Parametric Weather Insurance</h3>
+                        <p>IoT sensor-based insurance with automatic payouts for weather events—no lengthy claims process.</p>
+                        <ul class="card-features">
+                            <li>Automatic Payouts</li>
+                            <li>IoT-Based Triggers</li>
+                            <li>Instant Settlements</li>
+                            <li>Drought & Flood Coverage</li>
+                        </ul>
+                        <a href="#contact" class="card-button">Get Insured</a>
+                    </div>
+                </div>
+
+                <!-- Business Solution 6 -->
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-content">
+                        <h3>Training & FPO Support</h3>
+                        <p>Comprehensive training programs and complete FPO support for collective growth and success.</p>
+                        <ul class="card-features">
+                            <li>Precision Farming Training</li>
+                            <li>FPO Formation Support</li>
+                            <li>Collective Marketing</li>
+                            <li>24/7 Agronomic Helpline</li>
+                        </ul>
+                        <a href="#contact" class="card-button">Learn More</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products-section container">
+    <section id="products" class="container">
         <div class="section-title">
-            <h2>Our Products</h2>
+            <h2>🛍️ Premium Products</h2>
         </div>
+        <p class="section-subtitle">Certified organic produce and value-added products with complete traceability</p>
         
         <div class="products-filter">
             <button class="filter-btn active" data-filter="all">All Products</button>
-            <button class="filter-btn" data-filter="equipment">Farm Equipment</button>
+            <button class="filter-btn" data-filter="organic">Organic Produce</button>
+            <button class="filter-btn" data-filter="retail">Retail Products</button>
             <button class="filter-btn" data-filter="inputs">Agricultural Inputs</button>
-            <button class="filter-btn" data-filter="digital">Digital Solutions</button>
-            <button class="filter-btn" data-filter="irrigation">Irrigation</button>
+            <button class="filter-btn" data-filter="exports">Export Products</button>
         </div>
         
-        <div class="products-grid" id="productsGrid">
+        <div class="grid" id="productsGrid">
             <!-- Products will be dynamically loaded here -->
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section container">
-        <div class="section-title">
-            <h2>Our Services</h2>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Ready to Transform Your Farm?</h2>
+        <p>Join thousands of progressive farmers leveraging technology for higher yields and sustainable practices</p>
+        <div class="contact-info">
+            <p>📍 <strong>Pune Office:</strong> Thite Wasti, S.No. 14/1/1, Mundhwa Road, Kharadi, Pune - 411014, Maharashtra, India</p>
+            <p>📍 <strong>Hyderabad Office:</strong> Available</p>
+            <p>📧 <strong>Email:</strong> info@kisaaninfotech.com</p>
+            <p>📱 <strong>WhatsApp:</strong> Contact us for immediate assistance</p>
         </div>
-        
-        <div class="services-grid" id="servicesGrid">
-            <!-- Services will be dynamically loaded here -->
-        </div>
+        <br>
+        <a href="mailto:info@kisaaninfotech.com" class="cta-button">Schedule Free Consultation</a>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-column">
-                    <h3>Kisaan Infotech</h3>
-                    <p>Providing innovative agricultural solutions since 2010. We're committed to empowering farmers with technology and quality products.</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Agricultural Technology Park, Pune, Maharashtra</p>
-                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                    <p><i class="fas fa-envelope"></i> info@kisaaninfotech.com</p>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Product Categories</h3>
-                    <ul>
-                        <li><a href="#">Farm Equipment</a></li>
-                        <li><a href="#">Seeds & Inputs</a></li>
-                        <li><a href="#">Digital Solutions</a></li>
-                        <li><a href="#">Irrigation Systems</a></li>
-                        <li><a href="#">Protective Gear</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Our Services</h3>
-                    <ul>
-                        <li><a href="#">Farm Consulting</a></li>
-                        <li><a href="#">Equipment Leasing</a></li>
-                        <li><a href="#">Soil Testing</a></li>
-                        <li><a href="#">Crop Monitoring</a></li>
-                        <li><a href="#">Training Programs</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Kisaan Infotech. All Rights Reserved. | <a href="https://shop.kisaaninfotech.com" style="color: #4caf50;">shop.kisaaninfotech.com</a></p>
-            </div>
+    <footer>
+        <div class="footer-links">
+            <a href="https://kisaaninfotech.com/">Main Website</a>
+            <a href="https://kisaaninfotech.com/services.html">Services</a>
+            <a href="https://kisaaninfotech.com/investors.html">Investors</a>
+            <a href="https://kisaaninfotech.com/jobs/Jobslist.html">Careers</a>
         </div>
+        <p>&copy; 2025 Kisaan Infotech Limited. All Rights Reserved.</p>
+        <p>Transforming Indian Agriculture with Intelligence | CIN: U74999PN2014PLC150773</p>
     </footer>
 
     <script>
-        // Products data collected from provided sources
+        // Products data extracted from the provided HTML file
         const products = [
             {
                 id: 1,
-                name: "Solar Powered Irrigation System",
-                category: "irrigation",
-                description: "Energy-efficient irrigation system powered by solar energy with automated controls for optimal water usage.",
-                price: "₹45,000",
-                image: "irrigation"
+                name: "Kisaan Naturals™ Certified Organic Products",
+                category: "organic",
+                description: "Certified organic produce, pulses, and grains with complete farm-to-consumer traceability.",
+                price: "Varies by product",
+                features: [
+                    "Certified Organic Products",
+                    "Complete Traceability",
+                    "ESG Compliant",
+                    "Premium Quality Standards"
+                ]
             },
             {
                 id: 2,
-                name: "Multi-Crop Seeder Machine",
-                category: "equipment",
-                description: "Advanced seeding equipment for multiple crop types with adjustable depth and spacing controls.",
-                price: "₹85,000",
-                image: "equipment"
+                name: "Kisaan Retail™ Fresh Farm Produce",
+                category: "retail",
+                description: "Fresh, traceable farm produce delivered directly from farms to urban consumers.",
+                price: "Market competitive",
+                features: [
+                    "Farm-Fresh Produce",
+                    "Direct from Farmers",
+                    "No Middlemen",
+                    "Quality Guaranteed"
+                ]
             },
             {
                 id: 3,
-                name: "Smart Soil Sensor Kit",
-                category: "digital",
-                description: "IoT-based soil monitoring system that measures moisture, nutrient levels, and temperature in real-time.",
-                price: "₹12,500",
-                image: "digital"
+                name: "Vanille Bakery™ Premium Bakery Products",
+                category: "retail",
+                description: "Premium bakery and processed food products using farm-fresh, traceable ingredients.",
+                price: "Premium pricing",
+                features: [
+                    "Premium Baked Goods",
+                    "Farm-Fresh Ingredients",
+                    "Value-Added Products",
+                    "Artisanal Quality"
+                ]
             },
             {
                 id: 4,
-                name: "Organic Fertilizer Pack",
-                category: "inputs",
-                description: "100% organic fertilizer formulated for enhanced soil health and improved crop yield.",
-                price: "₹1,200",
-                image: "inputs"
+                name: "Food Grains & Pulses",
+                category: "organic",
+                description: "High-quality food grains, pulses, and specialty products sourced from verified farmers.",
+                price: "Competitive rates",
+                features: [
+                    "Rice, Wheat, Millets",
+                    "Organic Pulses",
+                    "Specialty Crops",
+                    "Quality Tested"
+                ]
             },
             {
                 id: 5,
-                name: "Drone Sprayer System",
-                category: "equipment",
-                description: "Agricultural drone for precision spraying of fertilizers and pesticides with GPS mapping.",
-                price: "₹2,50,000",
-                image: "equipment"
+                name: "Seeds & Agricultural Inputs",
+                category: "inputs",
+                description: "Premium seeds, fertilizers, and agricultural inputs for modern farming practices.",
+                price: "Starting at ₹500",
+                features: [
+                    "High-Yield Varieties",
+                    "Organic Fertilizers",
+                    "Quality Assured",
+                    "Expert Guidance"
+                ]
             },
             {
                 id: 6,
-                name: "Hybrid Wheat Seeds",
-                category: "inputs",
-                description: "High-yield hybrid wheat seeds with disease resistance and improved drought tolerance.",
-                price: "₹850",
-                image: "inputs"
+                name: "Kisaan Exports™ International Products",
+                category: "exports",
+                description: "Premium Indian agricultural products for international markets with full compliance.",
+                price: "Export pricing",
+                features: [
+                    "Export Quality Products",
+                    "International Standards",
+                    "Full Documentation",
+                    "Competitive Pricing"
+                ]
             },
             {
                 id: 7,
-                name: "Farm Management Software",
-                category: "digital",
-                description: "Comprehensive software for farm planning, inventory management, and financial tracking.",
-                price: "₹8,000/year",
-                image: "digital"
+                name: "Smart Soil IoT Sensor Kit",
+                category: "inputs",
+                description: "Wireless IoT sensors for real-time soil monitoring with mobile app integration.",
+                price: "₹15,000 - ₹50,000",
+                features: [
+                    "Real-time Monitoring",
+                    "Mobile App Alerts",
+                    "25-35% Water Savings",
+                    "Easy Installation"
+                ]
             },
             {
                 id: 8,
-                name: "Drip Irrigation Kit",
-                category: "irrigation",
-                description: "Complete drip irrigation system for 1 acre with filters, valves, and tubing for efficient watering.",
-                price: "₹22,000",
-                image: "irrigation"
-            }
-        ];
-
-        // Services data collected from provided sources
-        const services = [
-            {
-                id: 1,
-                name: "Farm Consulting & Planning",
-                description: "Expert consultation for crop selection, farm layout, resource planning, and profitability analysis tailored to your land and climate conditions.",
-                icon: "fas fa-clipboard-list"
-            },
-            {
-                id: 2,
-                name: "Equipment Leasing",
-                description: "Flexible leasing options for agricultural machinery and technology to reduce upfront investment while accessing modern farming equipment.",
-                icon: "fas fa-tractor"
-            },
-            {
-                id: 3,
-                name: "Soil Testing & Analysis",
-                description: "Comprehensive soil testing services with detailed nutrient analysis and personalized recommendations for soil health improvement.",
-                icon: "fas fa-flask"
-            },
-            {
-                id: 4,
-                name: "Crop Monitoring with Drones",
-                description: "Aerial monitoring services using drones equipped with multispectral cameras for crop health assessment and early problem detection.",
-                icon: "fas fa-drone"
-            },
-            {
-                id: 5,
-                name: "Farm Management Training",
-                description: "Training programs for farmers on modern agricultural techniques, technology usage, and sustainable farming practices.",
-                icon: "fas fa-graduation-cap"
-            },
-            {
-                id: 6,
-                name: "Irrigation System Design",
-                description: "Custom design and installation of efficient irrigation systems including drip, sprinkler, and solar-powered solutions.",
-                icon: "fas fa-water"
+                name: "Drone Spraying Service Package",
+                category: "inputs",
+                description: "Complete drone spraying service package for precision agriculture applications.",
+                price: "Starting at ₹5,000/acre",
+                features: [
+                    "NDVI Imaging",
+                    "Precision Spraying",
+                    "Early Pest Detection",
+                    "Chemical Savings"
+                ]
             }
         ];
 
         // DOM elements
         const productsGrid = document.getElementById('productsGrid');
-        const servicesGrid = document.getElementById('servicesGrid');
         const filterButtons = document.querySelectorAll('.filter-btn');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
@@ -808,14 +1057,14 @@
             // Load all products initially
             renderProducts(products);
             
-            // Load all services
-            renderServices(services);
-            
             // Setup filter functionality
             setupFilters();
             
             // Setup mobile menu
             setupMobileMenu();
+            
+            // Setup smooth scrolling for navigation links
+            setupSmoothScrolling();
         });
 
         // Render products to the page
@@ -824,24 +1073,25 @@
             
             productsArray.forEach(product => {
                 const productCard = document.createElement('div');
-                productCard.className = 'product-card';
+                productCard.className = 'card';
                 productCard.setAttribute('data-category', product.category);
                 
-                // Get appropriate icon for product image
-                let productIcon = 'fas fa-seedling';
-                if (product.category === 'equipment') productIcon = 'fas fa-tractor';
-                if (product.category === 'digital') productIcon = 'fas fa-tablet-alt';
-                if (product.category === 'irrigation') productIcon = 'fas fa-water';
-                if (product.category === 'inputs') productIcon = 'fas fa-prescription-bottle';
+                // Get appropriate icon for product
+                let productIcon = '🌿';
+                if (product.category === 'retail') productIcon = '🏪';
+                if (product.category === 'inputs') productIcon = '🌱';
+                if (product.category === 'exports') productIcon = '🌍';
+                if (product.name.includes('Bakery')) productIcon = '🍰';
+                if (product.name.includes('IoT') || product.name.includes('Drone')) productIcon = '🚁';
                 
                 productCard.innerHTML = `
-                    <div class="product-img">
-                        <i class="${productIcon}"></i>
-                    </div>
-                    <div class="product-content">
-                        <span class="product-category">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</span>
+                    <div class="card-icon">${productIcon}</div>
+                    <div class="card-content">
                         <h3>${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
+                        <p>${product.description}</p>
+                        <ul class="card-features">
+                            ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+                        </ul>
                         <div class="product-footer">
                             <div class="product-price">${product.price}</div>
                             <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
@@ -858,29 +1108,6 @@
                     const productId = this.getAttribute('data-id');
                     addToCart(productId);
                 });
-            });
-        }
-
-        // Render services to the page
-        function renderServices(servicesArray) {
-            servicesGrid.innerHTML = '';
-            
-            servicesArray.forEach(service => {
-                const serviceCard = document.createElement('div');
-                serviceCard.className = 'service-card';
-                
-                serviceCard.innerHTML = `
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="${service.icon}"></i>
-                        </div>
-                        <h3>${service.name}</h3>
-                        <p>${service.description}</p>
-                        <a href="#" class="btn" style="margin-top: 15px;">Learn More</a>
-                    </div>
-                `;
-                
-                servicesGrid.appendChild(serviceCard);
             });
         }
 
@@ -926,6 +1153,33 @@
                     mainNav.classList.remove('active');
                     mobileMenuBtn.querySelector('i').classList.remove('fa-times');
                     mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Setup smooth scrolling for navigation
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Update active nav link
+                        document.querySelectorAll('nav a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Smooth scroll to target
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
         }
